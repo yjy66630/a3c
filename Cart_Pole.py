@@ -37,7 +37,6 @@ config.hyperparameters = {
         "normalise_rewards": True,
         "exploration_worker_difference": 2.0,
         "clip_rewards": False,
-
         "Actor": {
             "learning_rate": 0.0003,
             "linear_hidden_units": [64, 64],
@@ -45,9 +44,8 @@ config.hyperparameters = {
             "batch_norm": False,
             "tau": 0.005,
             "gradient_clipping_norm": 5,
-            "initialiser": "Xavier"
+            "initialiser": "Xavier",
         },
-
         "Critic": {
             "learning_rate": 0.0003,
             "linear_hidden_units": [64, 64],
@@ -56,9 +54,8 @@ config.hyperparameters = {
             "buffer_size": 1000000,
             "tau": 0.005,
             "gradient_clipping_norm": 5,
-            "initialiser": "Xavier"
+            "initialiser": "Xavier",
         },
-
         "min_steps_before_learning": 400,
         "batch_size": 256,
         "discount_rate": 0.99,
@@ -72,7 +69,7 @@ config.hyperparameters = {
         "automatically_tune_entropy_hyperparameter": True,
         "entropy_term_weight": None,
         "add_extra_noise": False,
-        "do_evaluation_iterations": True
+        "do_evaluation_iterations": True,
     }
 }
 
