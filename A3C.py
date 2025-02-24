@@ -96,6 +96,14 @@ class A3C(Base_Agent):
                     params._grad = grads  # maybe need to do grads.clone()
                 self.actor_critic_optimizer.step()
 
+    def save_model(self):
+        """Saves the model"""
+        torch.save(self.actor_critic.state_dict(), "A3C.pt")
+
+    def load_model(self, path_to_model="A3C.pt"):
+        """Loads a model from a given path"""
+        self.actor_critic.load_state_dict(torch.load(path_to_model))
+
 
 class Actor_Critic_Worker(torch.multiprocessing.Process):
     """Actor critic worker that will play the game for the designated number of episodes"""

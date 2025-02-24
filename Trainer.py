@@ -147,6 +147,7 @@ class Trainer(object):
             print("RANDOM SEED ", agent_config.seed)
             game_scores, rolling_scores, time_taken = agent.run_n_episodes()
             print("Time taken: {}".format(time_taken), flush=True)
+            agent.save_model()
             self.print_two_empty_lines()
             agent_results.append(
                 [

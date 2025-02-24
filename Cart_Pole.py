@@ -8,11 +8,13 @@ import gymnasium as gym
 
 from A3C import A3C
 from Trainer import Trainer
+from Tester import Tester
 from Config import Config
 
 config = Config()
 config.seed = 1
 config.environment = gym.make("CartPole-v1")
+config.environment_name = "CartPole-v1"
 config.num_episodes_to_run = 450
 config.file_to_save_data_results = "Cart_Pole_Results_Data.pkl"
 config.file_to_save_results_graph = "Cart_Pole_Results_Graph.png"
@@ -75,5 +77,7 @@ config.hyperparameters = {
 
 if __name__ == "__main__":
     AGENTS = [A3C]
-    trainer = Trainer(config, AGENTS)
-    trainer.run_games_for_agents()
+    # trainer = Trainer(config, AGENTS)
+    # trainer.run_games_for_agents()
+    tester = Tester(config, AGENTS)
+    tester.run_test_episodes()
